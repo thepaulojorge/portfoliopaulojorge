@@ -1,210 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- SEO básico -->
-  <title>Paulo Jorge | Desenvolvedor Front-End</title>
-  <meta name="description" content="Portfólio de Paulo Jorge, desenvolvedor front-end em início de carreira. Especialista em HTML, CSS e JavaScript. Buscando primeira oportunidade na área.">
-  <meta name="keywords" content="desenvolvedor front-end, HTML, CSS, JavaScript, portfólio, Paulo Jorge, dev jr">
-  <meta name="author" content="Paulo Jorge">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://thepaulojorge.github.io/">
-
-  <!-- Open Graph — prévia ao compartilhar no WhatsApp, LinkedIn etc. -->
-  <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://thepaulojorge.github.io/">
-  <meta property="og:title"       content="Paulo Jorge | Desenvolvedor Front-End">
-  <meta property="og:description" content="Portfólio de Paulo Jorge — desenvolvedor front-end apaixonado por tecnologia e interfaces bonitas.">
-  <meta property="og:image"       content="https://thepaulojorge.github.io/paulo-jorge.jpg">
-  <meta property="og:locale"      content="pt_BR">
-
-  <!-- Twitter Card -->
-  <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="Paulo Jorge | Desenvolvedor Front-End">
-  <meta name="twitter:description" content="Portfólio de Paulo Jorge — dev front-end em início de carreira.">
-  <meta name="twitter:image"       content="https://thepaulojorge.github.io/paulo-jorge.jpg">
-
-  <!-- Performance — fontes com display=swap evita flash de texto invisível -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
-
-  <!-- Schema.org — Google entende melhor quem você é -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Paulo Jorge",
-    "url": "https://thepaulojorge.github.io/",
-    "jobTitle": "Desenvolvedor Front-End",
-    "description": "Desenvolvedor front-end em início de carreira, apaixonado por tecnologia e interfaces bonitas.",
-    "email": "contato.paulojorgejr@gmail.com",
-    "sameAs": [
-      "https://www.linkedin.com/in/paulo-jorge-295031163/",
-      "https://github.com/thepaulojorge"
-    ],
-    "knowsAbout": ["HTML", "CSS", "JavaScript", "Git", "Desenvolvimento Web"]
-  }
-  </script>
-</head>
-<body>
-
-  <!-- Cabeçalho -->
-  <header role="banner">
-    <nav role="navigation" aria-label="Menu principal">
-      <span class="logo" id="titulo" aria-label="Iniciais de Paulo Jorge">PJ</span>
-      <ul class="nav-links" role="list">
-        <li><a href="#sobre"    id="link-sobre">Sobre</a></li>
-        <li><a href="#skills"   id="link-skills">Skills</a></li>
-        <li><a href="#projetos" id="link-projetos">Projetos</a></li>
-        <li><a href="#contato"  id="link-contato">Contato</a></li>
-      </ul>
-      <div class="nav-actions">
-        <select id="idioma" aria-label="Selecionar idioma do site">
-          <option value="pt">🇧🇷 PT</option>
-          <option value="en">🇺🇸 EN</option>
-          <option value="fr">🇫🇷 FR</option>
-          <option value="jp">🇯🇵 JP</option>
-        </select>
-        <button id="btnTema" aria-label="Alternar entre tema claro e escuro">🌙</button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-links">☰</button>
-      </div>
-    </nav>
-  </header>
-
-  <!-- Hero -->
-  <main id="conteudo-principal">
-  <section id="hero" aria-label="Apresentação">
-    <div class="hero-inner">
-      <div class="hero-badge" id="hero-badge" aria-live="polite">Disponível para oportunidades</div>
-      <h1 class="hero-titulo">
-        <span id="hero-nome">Paulo Jorge</span><br>
-        <span class="hero-role" id="hero-role">Dev Front-End</span>
-      </h1>
-      <p class="hero-desc" id="hero-desc">
-        Apaixonado por tecnologia e interfaces bonitas. Buscando minha primeira vaga na área para criar soluções criativas e crescer junto com um time incrível.
-      </p>
-      <div class="hero-btns">
-        <a href="#projetos" class="btn-primary" id="hero-btn-projetos">Ver projetos</a>
-        <a href="/Curriculo Paulo Jorge (2).pdf" download class="btn-outline" id="btn-cv" aria-label="Baixar currículo em PDF">📄 Baixar CV</a>
-      </div>
-    </div>
-    <div class="hero-foto-wrap">
-      <div class="hero-foto-ring">
-        <!-- loading="eager" na foto principal — ela deve carregar imediatamente -->
-        <img src="paulo-jorge.jpg"
-             alt="Paulo Jorge, desenvolvedor front-end, sorrindo"
-             class="hero-foto"
-             loading="eager"
-             width="248"
-             height="248">
-      </div>
-    </div>
-  </section>
-
-  <!-- Sobre -->
-  <section id="sobre" aria-labelledby="sobre-titulo">
-    <div class="section-label" id="sobre-label">// sobre mim</div>
-    <h2 id="sobre-titulo">Quem sou eu</h2>
-    <div class="sobre-grid">
-      <p id="sobre-texto">
-        Sou desenvolvedor front-end em início de carreira, apaixonado por tecnologia e com muita vontade de aprender. Construo interfaces pensando tanto em estética quanto em experiência do usuário. Busco minha primeira oportunidade para crescer na área e contribuir com soluções criativas.
-      </p>
-      <div class="sobre-detalhes">
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">📍</span>
-          <span id="sobre-local">Brasil</span>
-        </div>
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">🎯</span>
-          <span id="sobre-objetivo">Vaga de Dev Front-End Jr.</span>
-        </div>
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">📚</span>
-          <span id="sobre-estudo">Sempre aprendendo</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Skills -->
-  <section id="skills" aria-labelledby="skills-titulo">
-    <div class="section-label" id="skills-label">// tecnologias</div>
-    <h2 id="skills-titulo">Skills</h2>
-    <div class="skills-grid" role="list">
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🌐</div>
-        <h3>HTML5</h3>
-        <p id="skill-html">Semântico, acessível e bem estruturado</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🎨</div>
-        <h3>CSS3</h3>
-        <p id="skill-css">Flexbox, Grid, animações e responsividade</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">⚡</div>
-        <h3>JavaScript</h3>
-        <p id="skill-js">DOM, eventos, fetch e lógica de aplicação</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🐙</div>
-        <h3>Git & GitHub</h3>
-        <p id="skill-git">Controle de versão e colaboração</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">📱</div>
-        <h3>Responsivo</h3>
-        <p id="skill-resp">Mobile first e design adaptável</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🔧</div>
-        <h3>Dev Tools</h3>
-        <p id="skill-dev">VS Code, Chrome DevTools e terminal</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" aria-labelledby="projetos-titulo">
-    <div class="section-label" id="projetos-label">// portfólio</div>
-    <h2 id="projetos-titulo">Projetos</h2>
-    <div class="projetos-grid">
-
-      <article class="projeto-card">
-        <div class="projeto-header">
-          <span class="projeto-num" aria-hidden="true">01</span>
-          <div class="projeto-links">
-            <a href="https://thepaulojorge.github.io/controledecompras/"
-               target="_blank" rel="noopener noreferrer"
-               id="proj1-link-ver"
-               aria-label="Ver app Controle de Compras (abre em nova aba)">↗ Ver app</a>
-          </div>
-        </div>
-        <h3 id="proj1-titulo">Controle de Compras</h3>
-        <p id="proj1-desc">App para cadastrar compras e controlar o limite permitido na alfândega. Gerenciamento de gastos em viagens internacionais.</p>
-        <div class="projeto-tags" aria-label="Tecnologias usadas">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-      </article>
-
-      <article class="projeto-card">
+<article class="projeto-card">
   <div class="projeto-header">
-    <span class="projeto-num" aria-hidden="true">04</span>
+    <span class="projeto-num" aria-hidden="true">02</span>
     <div class="projeto-links">
       <a href="https://thepaulojorge.github.io/catalogodejogos/"
          target="_blank" rel="noopener noreferrer"
-         id="proj4-link-ver"
+         id="proj2-link-ver"
          aria-label="Ver Catálogo de Jogos (abre em nova aba)">↗ Ver app</a>
     </div>
   </div>
-  <h3 id="proj4-titulo">Catálogo de Jogos</h3>
-  <p id="proj4-desc">Catálogo pessoal de jogos com estatísticas, busca, ordenação e sistema de avaliação. Inclui gráficos e exportação de dados.</p>
+  <h3 id="proj2-titulo">Catálogo de Jogos</h3>
+  <p id="proj2-desc">Catálogo pessoal de jogos com estatísticas, busca, ordenação e sistema de avaliação. Inclui gráficos e exportação de dados.</p>
   <div class="projeto-tags" aria-label="Tecnologias usadas">
     <span class="tag">HTML</span>
     <span class="tag">CSS</span>
@@ -214,16 +19,16 @@
 
 <article class="projeto-card">
   <div class="projeto-header">
-    <span class="projeto-num" aria-hidden="true">05</span>
+    <span class="projeto-num" aria-hidden="true">03</span>
     <div class="projeto-links">
       <a href="https://thepaulojorge.github.io/rescisaoverificada/"
          target="_blank" rel="noopener noreferrer"
-         id="proj5-link-ver"
+         id="proj3-link-ver"
          aria-label="Ver Rescisão Verificada (abre em nova aba)">↗ Ver app</a>
     </div>
   </div>
-  <h3 id="proj5-titulo">Rescisão Verificada</h3>
-  <p id="proj5-desc">Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.</p>
+  <h3 id="proj3-titulo">Rescisão Verificada</h3>
+  <p id="proj3-desc">Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.</p>
   <div class="projeto-tags" aria-label="Tecnologias usadas">
     <span class="tag">HTML</span>
     <span class="tag">CSS</span>
@@ -231,50 +36,3 @@
     <span class="tag">IA</span>
   </div>
 </article>
-
-    </div>
-  </section>
-
-  <!-- Contato -->
-  <section id="contato" aria-labelledby="contato-titulo">
-    <div class="section-label" id="contato-label">// vamos conversar</div>
-    <h2 id="contato-titulo">Contato</h2>
-    <p class="contato-desc" id="contato-desc">Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!</p>
-    <div class="contato-grid">
-      <a href="mailto:contato.paulojorgejr@gmail.com"
-         class="contato-card"
-         aria-label="Enviar e-mail para Paulo Jorge">
-        <span class="contato-icon" aria-hidden="true">📧</span>
-        <span id="contato-email-label">Email</span>
-        <span class="contato-valor">contato.paulojorgejr@gmail.com</span>
-      </a>
-      <a href="https://www.linkedin.com/in/paulo-jorge-295031163/"
-         target="_blank" rel="noopener noreferrer"
-         class="contato-card"
-         aria-label="Visitar perfil de Paulo Jorge no LinkedIn (abre em nova aba)">
-        <span class="contato-icon" aria-hidden="true">🔗</span>
-        <span id="contato-li-label">LinkedIn</span>
-        <span class="contato-valor">paulo-jorge</span>
-      </a>
-      <a href="https://github.com/thepaulojorge"
-         target="_blank" rel="noopener noreferrer"
-         class="contato-card"
-         aria-label="Visitar perfil de Paulo Jorge no GitHub (abre em nova aba)">
-        <span class="contato-icon" aria-hidden="true">💻</span>
-        <span id="contato-gh-label">GitHub</span>
-        <span class="contato-valor">thepaulojorge</span>
-      </a>
-    </div>
-  </section>
-
-  </main>
-
-  <!-- Rodapé -->
-  <footer role="contentinfo">
-    <p id="footer-texto">© 2026 Paulo Jorge — Feito com ❤️ e muito café</p>
-  </footer>
-
-  <!-- Botão topo (criado via JS) -->
-  <script src="js/script.js"></script>
-</body>
-</html>
