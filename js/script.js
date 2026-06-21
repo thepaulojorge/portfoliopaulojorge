@@ -4,7 +4,6 @@
 const btnTema = document.getElementById("btnTema");
 const body = document.body;
 
-// Carrega tema salvo
 if (localStorage.getItem("tema") === "dark") {
   body.classList.add("dark");
   btnTema.textContent = "☀️";
@@ -23,12 +22,12 @@ btnTema.addEventListener("click", () => {
 const btnTopo = document.createElement("button");
 btnTopo.id = "btnTopo";
 btnTopo.innerHTML = "↑";
-btnTopo.setAttribute("aria-label", "Voltar ao topo");
+btnTopo.setAttribute("aria-label", "Voltar ao topo da página");
 document.body.appendChild(btnTopo);
 
 window.addEventListener("scroll", () => {
   btnTopo.classList.toggle("show", window.scrollY > 400);
-});
+}, { passive: true });
 
 btnTopo.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
@@ -41,19 +40,19 @@ const menuToggle = document.getElementById("menuToggle");
 const navLinks   = document.querySelector(".nav-links");
 
 menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("open");
-  menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+  const aberto = navLinks.classList.toggle("open");
+  menuToggle.textContent = aberto ? "✕" : "☰";
+  menuToggle.setAttribute("aria-expanded", aberto);
 });
 
-// Fecha menu ao clicar num link
 document.querySelectorAll(".nav-links a").forEach(link => {
   link.addEventListener("click", () => {
     navLinks.classList.remove("open");
     menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
   });
 });
 
-// Fecha menu ao clicar fora
 document.addEventListener("click", (e) => {
   if (
     navLinks.classList.contains("open") &&
@@ -62,14 +61,15 @@ document.addEventListener("click", (e) => {
   ) {
     navLinks.classList.remove("open");
     menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
   }
 });
 
-// Fecha menu ao redimensionar para desktop
 window.addEventListener("resize", () => {
   if (window.innerWidth > 768) {
     navLinks.classList.remove("open");
     menuToggle.textContent = "☰";
+    menuToggle.setAttribute("aria-expanded", "false");
   }
 });
 
@@ -181,6 +181,12 @@ const traducoes = {
     proj3Titulo:   "Este Portfólio",
     proj3Desc:     "Portfólio multilíngue com modo escuro, efeito de digitação e navegação suave. Desenvolvido do zero com HTML, CSS e JS puro.",
     proj3Ver:      "↗ GitHub",
+    proj4Titulo:   "Catálogo de Jogos",
+    proj4Desc:     "Catálogo pessoal de jogos com estatísticas, busca, ordenação e sistema de avaliação. Inclui gráficos e exportação de dados.",
+    proj4Ver:      "↗ Ver app",
+    proj5Titulo:   "Rescisão Verificada",
+    proj5Desc:     "Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.",
+    proj5Ver:      "↗ Ver app",
     contatoLabel:  "// vamos conversar",
     contatoTitulo: "Contato",
     contatoDesc:   "Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!",
@@ -225,6 +231,12 @@ const traducoes = {
     proj3Titulo:   "This Portfolio",
     proj3Desc:     "Multilingual portfolio with dark mode, typing effect and smooth navigation. Built from scratch with pure HTML, CSS and JS.",
     proj3Ver:      "↗ GitHub",
+    proj4Titulo:   "Game Catalog",
+    proj4Desc:     "Personal game catalog with statistics, search, sorting and rating system. Includes charts and data export.",
+    proj4Ver:      "↗ View app",
+    proj5Titulo:   "Verified Severance",
+    proj5Desc:     "Labor severance calculator with integrated AI. Analyzes documents and calculates amounts according to Brazilian labor law.",
+    proj5Ver:      "↗ View app",
     contatoLabel:  "// let's talk",
     contatoTitulo: "Contact",
     contatoDesc:   "I'm open to opportunities, freelance and networking. Send me a message!",
@@ -269,6 +281,12 @@ const traducoes = {
     proj3Titulo:   "Ce Portfolio",
     proj3Desc:     "Portfolio multilingue avec mode sombre, effet de frappe et navigation fluide. Développé de zéro avec HTML, CSS et JS pur.",
     proj3Ver:      "↗ GitHub",
+    proj4Titulo:   "Catalogue de jeux",
+    proj4Desc:     "Catalogue personnel de jeux avec statistiques, recherche, tri et système de notation. Inclut des graphiques et l'export de données.",
+    proj4Ver:      "↗ Voir l'app",
+    proj5Titulo:   "Indemnité Vérifiée",
+    proj5Desc:     "Calculateur d'indemnité de licenciement avec IA intégrée. Analyse les documents et calcule les montants selon la loi du travail brésilienne.",
+    proj5Ver:      "↗ Voir l'app",
     contatoLabel:  "// parlons-en",
     contatoTitulo: "Contact",
     contatoDesc:   "Je suis ouvert aux opportunités, au freelance et au networking. Envoyez-moi un message !",
@@ -313,6 +331,12 @@ const traducoes = {
     proj3Titulo:   "このポートフォリオ",
     proj3Desc:     "ダークモード、タイピングエフェクト、スムーズナビゲーション搭載の多言語対応ポートフォリオ。",
     proj3Ver:      "↗ GitHub",
+    proj4Titulo:   "ゲームカタログ",
+    proj4Desc:     "統計、検索、並び替え、評価システムを備えた個人用ゲームカタログ。グラフとデータエクスポート機能付き。",
+    proj4Ver:      "↗ アプリを見る",
+    proj5Titulo:   "退職金検証システム",
+    proj5Desc:     "AIを統合した労働退職金計算機。書類を分析し、ブラジル労働法に基づいて金額を計算します。",
+    proj5Ver:      "↗ アプリを見る",
     contatoLabel:  "// お話しましょう",
     contatoTitulo: "連絡先",
     contatoDesc:   "機会、フリーランス、ネットワーキングについて開かれています。メッセージをどうぞ！",
@@ -337,46 +361,52 @@ seletor.addEventListener("change", () => {
     if (el) el.textContent = val;
   };
 
-  set("hero-badge",        t.heroBadge);
-  set("hero-nome",         t.heroNome);
-  set("hero-role",         t.heroRole);
-  set("hero-desc",         t.heroDesc);
-  set("hero-btn-projetos", t.heroBtnProj);
-  set("btn-cv",            t.btnCv);
-  set("sobre-label",       t.sobreLabel);
-  set("sobre-titulo",      t.sobreTitulo);
-  set("sobre-texto",       t.sobreTexto);
-  set("sobre-local",       t.sobreLocal);
-  set("sobre-objetivo",    t.sobreObjetivo);
-  set("sobre-estudo",      t.sobreEstudo);
-  set("skills-label",      t.skillsLabel);
-  set("skills-titulo",     t.skillsTitulo);
-  set("skill-html",        t.skillHtml);
-  set("skill-css",         t.skillCss);
-  set("skill-js",          t.skillJs);
-  set("skill-git",         t.skillGit);
-  set("skill-resp",        t.skillResp);
-  set("skill-dev",         t.skillDev);
-  set("projetos-label",    t.projetosLabel);
-  set("projetos-titulo",   t.projetosTitulo);
-  set("proj1-titulo",      t.proj1Titulo);
-  set("proj1-desc",        t.proj1Desc);
-  set("proj1-link-ver",    t.proj1Ver);
-  set("proj2-titulo",      t.proj2Titulo);
-  set("proj2-desc",        t.proj2Desc);
-  set("proj2-link-ver",    t.proj2Ver);
-  set("proj3-titulo",      t.proj3Titulo);
-  set("proj3-desc",        t.proj3Desc);
-  set("proj3-link-ver",    t.proj3Ver);
-  set("contato-label",     t.contatoLabel);
-  set("contato-titulo",    t.contatoTitulo);
-  set("contato-desc",      t.contatoDesc);
+  set("hero-badge",          t.heroBadge);
+  set("hero-nome",           t.heroNome);
+  set("hero-role",           t.heroRole);
+  set("hero-desc",           t.heroDesc);
+  set("hero-btn-projetos",   t.heroBtnProj);
+  set("btn-cv",              t.btnCv);
+  set("sobre-label",         t.sobreLabel);
+  set("sobre-titulo",        t.sobreTitulo);
+  set("sobre-texto",         t.sobreTexto);
+  set("sobre-local",         t.sobreLocal);
+  set("sobre-objetivo",      t.sobreObjetivo);
+  set("sobre-estudo",        t.sobreEstudo);
+  set("skills-label",        t.skillsLabel);
+  set("skills-titulo",       t.skillsTitulo);
+  set("skill-html",          t.skillHtml);
+  set("skill-css",           t.skillCss);
+  set("skill-js",            t.skillJs);
+  set("skill-git",           t.skillGit);
+  set("skill-resp",          t.skillResp);
+  set("skill-dev",           t.skillDev);
+  set("projetos-label",      t.projetosLabel);
+  set("projetos-titulo",     t.projetosTitulo);
+  set("proj1-titulo",        t.proj1Titulo);
+  set("proj1-desc",          t.proj1Desc);
+  set("proj1-link-ver",      t.proj1Ver);
+  set("proj2-titulo",        t.proj2Titulo);
+  set("proj2-desc",          t.proj2Desc);
+  set("proj2-link-ver",      t.proj2Ver);
+  set("proj3-titulo",        t.proj3Titulo);
+  set("proj3-desc",          t.proj3Desc);
+  set("proj3-link-ver",      t.proj3Ver);
+  set("proj4-titulo",        t.proj4Titulo);
+  set("proj4-desc",          t.proj4Desc);
+  set("proj4-link-ver",      t.proj4Ver);
+  set("proj5-titulo",        t.proj5Titulo);
+  set("proj5-desc",          t.proj5Desc);
+  set("proj5-link-ver",      t.proj5Ver);
+  set("contato-label",       t.contatoLabel);
+  set("contato-titulo",      t.contatoTitulo);
+  set("contato-desc",        t.contatoDesc);
   set("contato-email-label", t.contatoEmail);
-  set("contato-li-label",  t.contatoLi);
-  set("contato-gh-label",  t.contatoGh);
-  set("link-sobre",        t.linkSobre);
-  set("link-skills",       t.linkSkills);
-  set("link-projetos",     t.linkProjetos);
-  set("link-contato",      t.linkContato);
-  set("footer-texto",      t.footerTexto);
+  set("contato-li-label",    t.contatoLi);
+  set("contato-gh-label",    t.contatoGh);
+  set("link-sobre",          t.linkSobre);
+  set("link-skills",         t.linkSkills);
+  set("link-projetos",       t.linkProjetos);
+  set("link-contato",        t.linkContato);
+  set("footer-texto",        t.footerTexto);
 });
