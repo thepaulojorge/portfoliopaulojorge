@@ -319,9 +319,24 @@
   <dialog class="modal" id="modal-compras" aria-labelledby="modal-compras-titulo">
     <div class="modal-inner">
       <button class="modal-fechar" aria-label="Fechar modal">✕</button>
-      <img src="screenshots/controledecompras.png"
-           alt="Screenshot do app Controle de Compras"
-           class="modal-img" loading="lazy">
+
+      <div class="carrossel">
+        <button class="carrossel-seta carrossel-prev" aria-label="Imagem anterior">&#8592;</button>
+        <div class="carrossel-track">
+          <img src="screenshots/controledecompras.png"  alt="Controle de Compras - tela 1" class="carrossel-img ativo" loading="lazy">
+          <img src="screenshots/controledecompras2.png" alt="Controle de Compras - tela 2" class="carrossel-img" loading="lazy">
+          <img src="screenshots/controledecompras3.png" alt="Controle de Compras - tela 3" class="carrossel-img" loading="lazy">
+          <img src="screenshots/controledecompras4.png" alt="Controle de Compras - tela 4" class="carrossel-img" loading="lazy">
+        </div>
+        <button class="carrossel-seta carrossel-next" aria-label="Próxima imagem">&#8594;</button>
+        <div class="carrossel-dots">
+          <span class="dot ativo"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
       <div class="modal-corpo">
         <div class="modal-tags">
           <span class="tag">HTML</span>
@@ -330,9 +345,7 @@
         </div>
         <h3 id="modal-compras-titulo">Controle de Compras</h3>
         <p>App para cadastrar compras durante viagens internacionais e garantir que o valor total não ultrapasse o limite da alfândega brasileira (US$ 500). Desenvolvido com HTML, CSS e JavaScript puro, sem nenhuma biblioteca externa.</p>
-        <a href="https://thepaulojorge.github.io/controledecompras/"
-           target="_blank" rel="noopener noreferrer"
-           class="btn-primary modal-btn">↗ Abrir projeto</a>
+        <a href="https://thepaulojorge.github.io/controledecompras/" target="_blank" rel="noopener noreferrer" class="btn-primary modal-btn">↗ Abrir projeto</a>
       </div>
     </div>
   </dialog>
@@ -341,9 +354,26 @@
   <dialog class="modal" id="modal-catalogo" aria-labelledby="modal-catalogo-titulo">
     <div class="modal-inner">
       <button class="modal-fechar" aria-label="Fechar modal">✕</button>
-      <img src="screenshots/catalogo1.png"
-           alt="Screenshot do Catálogo de Jogos"
-           class="modal-img" loading="lazy">
+
+      <div class="carrossel">
+        <button class="carrossel-seta carrossel-prev" aria-label="Imagem anterior">&#8592;</button>
+        <div class="carrossel-track">
+          <img src="screenshots/catalogo1.png" alt="Catálogo de Jogos - tela 1" class="carrossel-img ativo" loading="lazy">
+          <img src="screenshots/catalogo2.png" alt="Catálogo de Jogos - tela 2" class="carrossel-img" loading="lazy">
+          <img src="screenshots/catalogo3.png" alt="Catálogo de Jogos - tela 3" class="carrossel-img" loading="lazy">
+          <img src="screenshots/catalogo4.png" alt="Catálogo de Jogos - tela 4" class="carrossel-img" loading="lazy">
+          <img src="screenshots/catalogo5.png" alt="Catálogo de Jogos - tela 5" class="carrossel-img" loading="lazy">
+        </div>
+        <button class="carrossel-seta carrossel-next" aria-label="Próxima imagem">&#8594;</button>
+        <div class="carrossel-dots">
+          <span class="dot ativo"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
       <div class="modal-corpo">
         <div class="modal-tags">
           <span class="tag">HTML</span>
@@ -352,9 +382,7 @@
         </div>
         <h3 id="modal-catalogo-titulo">Catálogo de Jogos</h3>
         <p>Catálogo pessoal de jogos com sistema de busca, filtros por plataforma, ordenação, notas e estatísticas. Inclui gráficos gerados com Chart.js e exportação dos dados em JSON. Tudo salvo no localStorage.</p>
-        <a href="https://thepaulojorge.github.io/catalogodejogos/"
-           target="_blank" rel="noopener noreferrer"
-           class="btn-primary modal-btn">↗ Abrir projeto</a>
+        <a href="https://thepaulojorge.github.io/catalogodejogos/" target="_blank" rel="noopener noreferrer" class="btn-primary modal-btn">↗ Abrir projeto</a>
       </div>
     </div>
   </dialog>
@@ -363,9 +391,20 @@
   <dialog class="modal" id="modal-rescisao" aria-labelledby="modal-rescisao-titulo">
     <div class="modal-inner">
       <button class="modal-fechar" aria-label="Fechar modal">✕</button>
-      <img src="screenshots/rescisao1.png"
-           alt="Screenshot da Rescisão Verificada"
-           class="modal-img" loading="lazy">
+
+      <div class="carrossel">
+        <button class="carrossel-seta carrossel-prev" aria-label="Imagem anterior">&#8592;</button>
+        <div class="carrossel-track">
+          <img src="screenshots/rescisao1.png" alt="Rescisão Verificada - tela 1" class="carrossel-img ativo" loading="lazy">
+          <img src="screenshots/rescisao2.png" alt="Rescisão Verificada - tela 2" class="carrossel-img" loading="lazy">
+        </div>
+        <button class="carrossel-seta carrossel-next" aria-label="Próxima imagem">&#8594;</button>
+        <div class="carrossel-dots">
+          <span class="dot ativo"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
+
       <div class="modal-corpo">
         <div class="modal-tags">
           <span class="tag">HTML</span>
@@ -375,9 +414,7 @@
         </div>
         <h3 id="modal-rescisao-titulo">Rescisão Verificada</h3>
         <p>Calculadora de rescisão trabalhista com IA integrada via API da Anthropic. O usuário insere os dados do contrato e a IA analisa e calcula os valores devidos conforme a CLT — férias, 13º, FGTS e aviso prévio.</p>
-        <a href="https://thepaulojorge.github.io/rescisaoverificada/"
-           target="_blank" rel="noopener noreferrer"
-           class="btn-primary modal-btn">↗ Abrir projeto</a>
+        <a href="https://thepaulojorge.github.io/rescisaoverificada/" target="_blank" rel="noopener noreferrer" class="btn-primary modal-btn">↗ Abrir projeto</a>
       </div>
     </div>
   </dialog>
