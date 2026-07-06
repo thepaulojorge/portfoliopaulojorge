@@ -10,35 +10,35 @@
   <meta name="keywords" content="desenvolvedor front-end, HTML, CSS, JavaScript, portfólio, Paulo Jorge, dev jr">
   <meta name="author" content="Paulo Jorge">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://thepaulojorge.github.io/">
+  <link rel="canonical" href="https://thepaulojorge.github.io/portfoliopaulojorge/">
 
-  <!-- Open Graph — prévia ao compartilhar no WhatsApp, LinkedIn etc. -->
+  <!-- Open Graph -->
   <meta property="og:type"        content="website">
-  <meta property="og:url"         content="https://thepaulojorge.github.io/">
+  <meta property="og:url"         content="https://thepaulojorge.github.io/portfoliopaulojorge/">
   <meta property="og:title"       content="Paulo Jorge | Desenvolvedor Front-End">
   <meta property="og:description" content="Portfólio de Paulo Jorge — desenvolvedor front-end apaixonado por tecnologia e interfaces bonitas.">
-  <meta property="og:image"       content="https://thepaulojorge.github.io/paulo-jorge.jpg">
+  <meta property="og:image"       content="https://thepaulojorge.github.io/portfoliopaulojorge/paulo-jorge.jpg">
   <meta property="og:locale"      content="pt_BR">
 
   <!-- Twitter Card -->
   <meta name="twitter:card"        content="summary_large_image">
   <meta name="twitter:title"       content="Paulo Jorge | Desenvolvedor Front-End">
   <meta name="twitter:description" content="Portfólio de Paulo Jorge — dev front-end em início de carreira.">
-  <meta name="twitter:image"       content="https://thepaulojorge.github.io/paulo-jorge.jpg">
+  <meta name="twitter:image"       content="https://thepaulojorge.github.io/portfoliopaulojorge/paulo-jorge.jpg">
 
-  <!-- Performance — fontes com display=swap evita flash de texto invisível -->
+  <!-- Fontes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="style.css">
 
-  <!-- Schema.org — Google entende melhor quem você é -->
+  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Paulo Jorge",
-    "url": "https://thepaulojorge.github.io/",
+    "url": "https://thepaulojorge.github.io/portfoliopaulojorge/",
     "jobTitle": "Desenvolvedor Front-End",
     "description": "Desenvolvedor front-end em início de carreira, apaixonado por tecnologia e interfaces bonitas.",
     "email": "contato.paulojorgejr@gmail.com",
@@ -56,7 +56,7 @@
   <header role="banner">
     <nav role="navigation" aria-label="Menu principal">
       <span class="logo" id="titulo" aria-label="Iniciais de Paulo Jorge">PJ</span>
-      <ul class="nav-links" role="list">
+      <ul class="nav-links" id="nav-links" role="list">
         <li><a href="#sobre"    id="link-sobre">Sobre</a></li>
         <li><a href="#skills"   id="link-skills">Skills</a></li>
         <li><a href="#projetos" id="link-projetos">Projetos</a></li>
@@ -70,202 +70,239 @@
           <option value="jp">🇯🇵 JP</option>
         </select>
         <button id="btnTema" aria-label="Alternar entre tema claro e escuro">🌙</button>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="nav-links">☰</button>
+        <button class="menu-toggle" id="menuToggle"
+                aria-label="Abrir menu de navegação"
+                aria-expanded="false"
+                aria-controls="nav-links">☰</button>
       </div>
     </nav>
   </header>
 
-  <!-- Hero -->
   <main id="conteudo-principal">
-  <section id="hero" aria-label="Apresentação">
-    <div class="hero-inner">
-      <div class="hero-badge" id="hero-badge" aria-live="polite">Disponível para oportunidades</div>
-      <h1 class="hero-titulo">
-        <span id="hero-nome">Paulo Jorge</span><br>
-        <span class="hero-role" id="hero-role">Dev Front-End</span>
-      </h1>
-      <p class="hero-desc" id="hero-desc">
-        Apaixonado por tecnologia e interfaces bonitas. Buscando minha primeira vaga na área para criar soluções criativas e crescer junto com um time incrível.
-      </p>
-      <div class="hero-btns">
-        <a href="#projetos" class="btn-primary" id="hero-btn-projetos">Ver projetos</a>
-        <a href="/Curriculo Paulo Jorge (2).pdf" download class="btn-outline" id="btn-cv" aria-label="Baixar currículo em PDF">📄 Baixar CV</a>
-      </div>
-    </div>
-    <div class="hero-foto-wrap">
-      <div class="hero-foto-ring">
-        <!-- loading="eager" na foto principal — ela deve carregar imediatamente -->
-        <img src="paulo-jorge.jpg"
-             alt="Paulo Jorge, desenvolvedor front-end, sorrindo"
-             class="hero-foto"
-             loading="eager"
-             width="248"
-             height="248">
-      </div>
-    </div>
-  </section>
 
-  <!-- Sobre -->
-  <section id="sobre" aria-labelledby="sobre-titulo">
-    <div class="section-label" id="sobre-label">// sobre mim</div>
-    <h2 id="sobre-titulo">Quem sou eu</h2>
-    <div class="sobre-grid">
-      <p id="sobre-texto">
-        Sou desenvolvedor front-end em início de carreira, apaixonado por tecnologia e com muita vontade de aprender. Construo interfaces pensando tanto em estética quanto em experiência do usuário. Busco minha primeira oportunidade para crescer na área e contribuir com soluções criativas.
-      </p>
-      <div class="sobre-detalhes">
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">📍</span>
-          <span id="sobre-local">Brasil</span>
-        </div>
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">🎯</span>
-          <span id="sobre-objetivo">Vaga de Dev Front-End Jr.</span>
-        </div>
-        <div class="detalhe-item">
-          <span class="detalhe-icon" aria-hidden="true">📚</span>
-          <span id="sobre-estudo">Sempre aprendendo</span>
+    <!-- Hero -->
+    <section id="hero" aria-label="Apresentação">
+      <div class="hero-inner">
+        <div class="hero-badge" id="hero-badge" aria-live="polite">Disponível para oportunidades</div>
+        <h1 class="hero-titulo">
+          <span id="hero-nome">Paulo Jorge</span><br>
+          <span class="hero-role" id="hero-role">Dev Front-End</span>
+        </h1>
+        <p class="hero-desc" id="hero-desc">
+          Apaixonado por tecnologia e interfaces bonitas. Buscando minha primeira vaga na área para criar soluções criativas e crescer junto com um time incrível.
+        </p>
+        <div class="hero-btns">
+          <a href="#projetos" class="btn-primary" id="hero-btn-projetos">Ver projetos</a>
+          <a href="curriculo-paulo-jorge.pdf" download
+             class="btn-outline" id="btn-cv"
+             aria-label="Baixar currículo em PDF">📄 Baixar CV</a>
         </div>
       </div>
-    </div>
-  </section>
+      <div class="hero-foto-wrap">
+        <div class="hero-foto-ring">
+          <img src="paulo-jorge.jpg"
+               alt="Paulo Jorge, desenvolvedor front-end, sorrindo"
+               class="hero-foto"
+               loading="eager"
+               width="248"
+               height="248">
+        </div>
+      </div>
+    </section>
 
-  <!-- Skills -->
-  <section id="skills" aria-labelledby="skills-titulo">
-    <div class="section-label" id="skills-label">// tecnologias</div>
-    <h2 id="skills-titulo">Skills</h2>
-    <div class="skills-grid" role="list">
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🌐</div>
-        <h3>HTML5</h3>
-        <p id="skill-html">Semântico, acessível e bem estruturado</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🎨</div>
-        <h3>CSS3</h3>
-        <p id="skill-css">Flexbox, Grid, animações e responsividade</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">⚡</div>
-        <h3>JavaScript</h3>
-        <p id="skill-js">DOM, eventos, fetch e lógica de aplicação</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🐙</div>
-        <h3>Git & GitHub</h3>
-        <p id="skill-git">Controle de versão e colaboração</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">📱</div>
-        <h3>Responsivo</h3>
-        <p id="skill-resp">Mobile first e design adaptável</p>
-      </div>
-      <div class="skill-card" role="listitem">
-        <div class="skill-icon" aria-hidden="true">🔧</div>
-        <h3>Dev Tools</h3>
-        <p id="skill-dev">VS Code, Chrome DevTools e terminal</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projetos -->
-  <section id="projetos" aria-labelledby="projetos-titulo">
-    <div class="section-label" id="projetos-label">// portfólio</div>
-    <h2 id="projetos-titulo">Projetos</h2>
-    <div class="projetos-grid">
-
-      <article class="projeto-card">
-        <div class="projeto-header">
-          <span class="projeto-num" aria-hidden="true">01</span>
-          <div class="projeto-links">
-            <a href="https://thepaulojorge.github.io/controledecompras/"
-               target="_blank" rel="noopener noreferrer"
-               id="proj1-link-ver"
-               aria-label="Ver app Controle de Compras (abre em nova aba)">↗ Ver app</a>
+    <!-- Sobre -->
+    <section id="sobre" aria-labelledby="sobre-titulo">
+      <div class="section-label" id="sobre-label">// sobre mim</div>
+      <h2 id="sobre-titulo">Quem sou eu</h2>
+      <div class="sobre-grid">
+        <p id="sobre-texto">
+          Sou desenvolvedor front-end em início de carreira, apaixonado por tecnologia e com muita vontade de aprender. Construo interfaces pensando tanto em estética quanto em experiência do usuário. Busco minha primeira oportunidade para crescer na área e contribuir com soluções criativas.
+        </p>
+        <div class="sobre-detalhes">
+          <div class="detalhe-item">
+            <span class="detalhe-icon" aria-hidden="true">📍</span>
+            <span id="sobre-local">Brasil</span>
+          </div>
+          <div class="detalhe-item">
+            <span class="detalhe-icon" aria-hidden="true">🎯</span>
+            <span id="sobre-objetivo">Vaga de Dev Front-End Jr.</span>
+          </div>
+          <div class="detalhe-item">
+            <span class="detalhe-icon" aria-hidden="true">📚</span>
+            <span id="sobre-estudo">Sempre aprendendo</span>
           </div>
         </div>
-        <h3 id="proj1-titulo">Controle de Compras</h3>
-        <p id="proj1-desc">App para cadastrar compras e controlar o limite permitido na alfândega. Gerenciamento de gastos em viagens internacionais.</p>
-        <div class="projeto-tags" aria-label="Tecnologias usadas">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" aria-labelledby="skills-titulo">
+      <div class="section-label" id="skills-label">// tecnologias</div>
+      <h2 id="skills-titulo">Skills</h2>
+      <div class="skills-grid" role="list">
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🌐</div>
+          <h3>HTML5</h3>
+          <p id="skill-html">Semântico, acessível e bem estruturado</p>
         </div>
-      </article>
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🎨</div>
+          <h3>CSS3</h3>
+          <p id="skill-css">Flexbox, Grid, animações e responsividade</p>
+        </div>
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">⚡</div>
+          <h3>JavaScript</h3>
+          <p id="skill-js">DOM, eventos, fetch e lógica de aplicação</p>
+        </div>
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🐙</div>
+          <h3>Git & GitHub</h3>
+          <p id="skill-git">Controle de versão e colaboração</p>
+        </div>
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">📱</div>
+          <h3>Responsivo</h3>
+          <p id="skill-resp">Mobile first e design adaptável</p>
+        </div>
+        <div class="skill-card" role="listitem">
+          <div class="skill-icon" aria-hidden="true">🔧</div>
+          <h3>Dev Tools</h3>
+          <p id="skill-dev">VS Code, Chrome DevTools e terminal</p>
+        </div>
+      </div>
+    </section>
 
-      <article class="projeto-card">
-  <div class="projeto-header">
-    <span class="projeto-num" aria-hidden="true">02</span>
-    <div class="projeto-links">
-      <a href="https://thepaulojorge.github.io/catalogodejogos/"
-         target="_blank" rel="noopener noreferrer"
-         id="proj2-link-ver"
-         aria-label="Ver Catálogo de Jogos (abre em nova aba)">↗ Ver app</a>
-    </div>
-  </div>
-  <h3 id="proj2-titulo">Catálogo de Jogos</h3>
-  <p id="proj2-desc">Catálogo pessoal de jogos com estatísticas, busca, ordenação e sistema de avaliação. Inclui gráficos e exportação de dados.</p>
-  <div class="projeto-tags" aria-label="Tecnologias usadas">
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-  </div>
-</article>
+    <!-- Projetos -->
+    <section id="projetos" aria-labelledby="projetos-titulo">
+      <div class="section-label" id="projetos-label">// portfólio</div>
+      <h2 id="projetos-titulo">Projetos</h2>
+      <div class="projetos-grid">
 
-<article class="projeto-card">
-  <div class="projeto-header">
-    <span class="projeto-num" aria-hidden="true">03</span>
-    <div class="projeto-links">
-      <a href="https://thepaulojorge.github.io/rescisaoverificada/"
-         target="_blank" rel="noopener noreferrer"
-         id="proj3-link-ver"
-         aria-label="Ver Rescisão Verificada (abre em nova aba)">↗ Ver app</a>
-    </div>
-  </div>
-  <h3 id="proj3-titulo">Rescisão Verificada</h3>
-  <p id="proj3-desc">Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.</p>
-  <div class="projeto-tags" aria-label="Tecnologias usadas">
-    <span class="tag">HTML</span>
-    <span class="tag">CSS</span>
-    <span class="tag">JavaScript</span>
-    <span class="tag">IA</span>
-  </div>
-</article>
+        <article class="projeto-card" data-modal="modal-compras">
+          <div class="projeto-header">
+            <span class="projeto-num" aria-hidden="true">01</span>
+            <div class="projeto-links">
+              <button class="btn-modal" aria-label="Ver detalhes do Controle de Compras" id="proj1-btn-modal">+ Detalhes</button>
+              <a href="https://thepaulojorge.github.io/controledecompras/"
+                 target="_blank" rel="noopener noreferrer"
+                 id="proj1-link-ver"
+                 aria-label="Ver app Controle de Compras (abre em nova aba)">↗ Ver app</a>
+            </div>
+          </div>
+          <h3 id="proj1-titulo">Controle de Compras</h3>
+          <p id="proj1-desc">App para cadastrar compras e controlar o limite permitido na alfândega. Gerenciamento de gastos em viagens internacionais.</p>
+          <div class="projeto-tags" aria-label="Tecnologias usadas">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </article>
 
-    </div>
-  </section>
+        <article class="projeto-card" data-modal="modal-catalogo">
+          <div class="projeto-header">
+            <span class="projeto-num" aria-hidden="true">02</span>
+            <div class="projeto-links">
+              <button class="btn-modal" aria-label="Ver detalhes do Catálogo de Jogos" id="proj2-btn-modal">+ Detalhes</button>
+              <a href="https://thepaulojorge.github.io/catalogodejogos/"
+                 target="_blank" rel="noopener noreferrer"
+                 id="proj2-link-ver"
+                 aria-label="Ver Catálogo de Jogos (abre em nova aba)">↗ Ver app</a>
+            </div>
+          </div>
+          <h3 id="proj2-titulo">Catálogo de Jogos</h3>
+          <p id="proj2-desc">Catálogo pessoal de jogos com estatísticas, busca, ordenação e sistema de avaliação. Inclui gráficos e exportação de dados.</p>
+          <div class="projeto-tags" aria-label="Tecnologias usadas">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+        </article>
 
-  <!-- Contato -->
-  <section id="contato" aria-labelledby="contato-titulo">
-    <div class="section-label" id="contato-label">// vamos conversar</div>
-    <h2 id="contato-titulo">Contato</h2>
-    <p class="contato-desc" id="contato-desc">Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!</p>
-    <div class="contato-grid">
-      <a href="mailto:contato.paulojorgejr@gmail.com"
-         class="contato-card"
-         aria-label="Enviar e-mail para Paulo Jorge">
-        <span class="contato-icon" aria-hidden="true">📧</span>
-        <span id="contato-email-label">Email</span>
-        <span class="contato-valor">contato.paulojorgejr@gmail.com</span>
-      </a>
-      <a href="https://www.linkedin.com/in/paulo-jorge-295031163/"
-         target="_blank" rel="noopener noreferrer"
-         class="contato-card"
-         aria-label="Visitar perfil de Paulo Jorge no LinkedIn (abre em nova aba)">
-        <span class="contato-icon" aria-hidden="true">🔗</span>
-        <span id="contato-li-label">LinkedIn</span>
-        <span class="contato-valor">paulo-jorge</span>
-      </a>
-      <a href="https://github.com/thepaulojorge"
-         target="_blank" rel="noopener noreferrer"
-         class="contato-card"
-         aria-label="Visitar perfil de Paulo Jorge no GitHub (abre em nova aba)">
-        <span class="contato-icon" aria-hidden="true">💻</span>
-        <span id="contato-gh-label">GitHub</span>
-        <span class="contato-valor">thepaulojorge</span>
-      </a>
-    </div>
-  </section>
+        <article class="projeto-card projeto-card--destaque" data-modal="modal-rescisao">
+          <div class="projeto-header">
+            <span class="projeto-num" aria-hidden="true">03</span>
+            <div class="projeto-links">
+              <button class="btn-modal" aria-label="Ver detalhes da Rescisão Verificada" id="proj3-btn-modal">+ Detalhes</button>
+              <a href="https://thepaulojorge.github.io/rescisaoverificada/"
+                 target="_blank" rel="noopener noreferrer"
+                 id="proj3-link-ver"
+                 aria-label="Ver Rescisão Verificada (abre em nova aba)">↗ Ver app</a>
+            </div>
+          </div>
+          <h3 id="proj3-titulo">Rescisão Verificada</h3>
+          <p id="proj3-desc">Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.</p>
+          <div class="projeto-tags" aria-label="Tecnologias usadas">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">IA</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" aria-labelledby="contato-titulo">
+      <div class="section-label" id="contato-label">// vamos conversar</div>
+      <h2 id="contato-titulo">Contato</h2>
+      <p class="contato-desc" id="contato-desc">Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!</p>
+
+      <div class="contato-layout">
+
+        <!-- Links rápidos -->
+        <div class="contato-links">
+          <a href="mailto:contato.paulojorgejr@gmail.com"
+             class="contato-card"
+             aria-label="Enviar e-mail para Paulo Jorge">
+            <span class="contato-icon" aria-hidden="true">📧</span>
+            <span id="contato-email-label">Email</span>
+            <span class="contato-valor">contato.paulojorgejr@gmail.com</span>
+          </a>
+          <a href="https://www.linkedin.com/in/paulo-jorge-295031163/"
+             target="_blank" rel="noopener noreferrer"
+             class="contato-card"
+             aria-label="Visitar perfil de Paulo Jorge no LinkedIn (abre em nova aba)">
+            <span class="contato-icon" aria-hidden="true">🔗</span>
+            <span id="contato-li-label">LinkedIn</span>
+            <span class="contato-valor">paulo-jorge</span>
+          </a>
+          <a href="https://github.com/thepaulojorge"
+             target="_blank" rel="noopener noreferrer"
+             class="contato-card"
+             aria-label="Visitar perfil de Paulo Jorge no GitHub (abre em nova aba)">
+            <span class="contato-icon" aria-hidden="true">💻</span>
+            <span id="contato-gh-label">GitHub</span>
+            <span class="contato-valor">thepaulojorge</span>
+          </a>
+        </div>
+
+        <!-- Formulário de contato -->
+        <form class="contato-form" id="contato-form" action="https://formspree.io/f/mzdlwdeg" method="POST" novalidate>
+          <div class="form-group">
+            <label for="nome" id="label-nome">Nome</label>
+            <input type="text" id="nome" name="nome" required
+                   placeholder="Seu nome" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email" id="label-email">Email</label>
+            <input type="email" id="email" name="email" required
+                   placeholder="seu@email.com" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="mensagem" id="label-mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required
+                      placeholder="Sua mensagem..."></textarea>
+          </div>
+          <button type="submit" class="btn-enviar" id="btn-enviar">
+            <span id="btn-enviar-texto">Enviar mensagem</span>
+          </button>
+          <p class="form-status" id="form-status" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </section>
 
   </main>
 
@@ -274,7 +311,77 @@
     <p id="footer-texto">© 2026 Paulo Jorge — Feito com ❤️ e muito café</p>
   </footer>
 
-  <!-- Botão topo (criado via JS) -->
-  <script src="js/script.js"></script>
+  <!-- ============================================================
+       MODAIS DOS PROJETOS
+  ============================================================ -->
+
+  <!-- Modal 01 — Controle de Compras -->
+  <dialog class="modal" id="modal-compras" aria-labelledby="modal-compras-titulo">
+    <div class="modal-inner">
+      <button class="modal-fechar" aria-label="Fechar modal">✕</button>
+      <img src="screenshots/controledecompras1.png"
+           alt="Screenshot do app Controle de Compras"
+           class="modal-img" loading="lazy">
+      <div class="modal-corpo">
+        <div class="modal-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <h3 id="modal-compras-titulo">Controle de Compras</h3>
+        <p>App para cadastrar compras durante viagens internacionais e garantir que o valor total não ultrapasse o limite da alfândega brasileira (US$ 500). Desenvolvido com HTML, CSS e JavaScript puro, sem nenhuma biblioteca externa.</p>
+        <a href="https://thepaulojorge.github.io/controledecompras/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary modal-btn">↗ Abrir projeto</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 02 — Catálogo de Jogos -->
+  <dialog class="modal" id="modal-catalogo" aria-labelledby="modal-catalogo-titulo">
+    <div class="modal-inner">
+      <button class="modal-fechar" aria-label="Fechar modal">✕</button>
+      <img src="screenshots/catalogo1.png"
+           alt="Screenshot do Catálogo de Jogos"
+           class="modal-img" loading="lazy">
+      <div class="modal-corpo">
+        <div class="modal-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+        <h3 id="modal-catalogo-titulo">Catálogo de Jogos</h3>
+        <p>Catálogo pessoal de jogos com sistema de busca, filtros por plataforma, ordenação, notas e estatísticas. Inclui gráficos gerados com Chart.js e exportação dos dados em JSON. Tudo salvo no localStorage.</p>
+        <a href="https://thepaulojorge.github.io/catalogodejogos/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary modal-btn">↗ Abrir projeto</a>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Modal 03 — Rescisão Verificada -->
+  <dialog class="modal" id="modal-rescisao" aria-labelledby="modal-rescisao-titulo">
+    <div class="modal-inner">
+      <button class="modal-fechar" aria-label="Fechar modal">✕</button>
+      <img src="screenshots/rescisao1.png"
+           alt="Screenshot da Rescisão Verificada"
+           class="modal-img" loading="lazy">
+      <div class="modal-corpo">
+        <div class="modal-tags">
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">IA</span>
+        </div>
+        <h3 id="modal-rescisao-titulo">Rescisão Verificada</h3>
+        <p>Calculadora de rescisão trabalhista com IA integrada via API da Anthropic. O usuário insere os dados do contrato e a IA analisa e calcula os valores devidos conforme a CLT — férias, 13º, FGTS e aviso prévio.</p>
+        <a href="https://thepaulojorge.github.io/rescisaoverificada/"
+           target="_blank" rel="noopener noreferrer"
+           class="btn-primary modal-btn">↗ Abrir projeto</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js"></script>
 </body>
 </html>

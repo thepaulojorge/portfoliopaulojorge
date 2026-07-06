@@ -380,3 +380,78 @@ seletor.addEventListener("change", () => {
   set("link-contato",        t.linkContato);
   set("footer-texto",        t.footerTexto);
 });
+
+// =====================
+// MODAIS DOS PROJETOS
+// =====================
+document.querySelectorAll(".btn-modal").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const card   = btn.closest(".projeto-card");
+    const modalId = card.getAttribute("data-modal");
+    const modal  = document.getElementById(modalId);
+    if (modal) modal.showModal();
+  });
+});
+
+document.querySelectorAll(".modal-fechar").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").close();
+  });
+});
+
+// Fecha ao clicar fora do conteúdo
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.close();
+  });
+});
+
+// Fecha com Escape (nativo do <dialog>, mas garante animação)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal[open]").forEach(m => m.close());
+  }
+});
+
+// =====================
+// FORMULÁRIO DE CONTATO
+// =====================
+const form       = document.getElementById("contato-form");
+const status     = document.getElementById("form-status");
+const btnEnviar  = document.getElementById("btn-enviar");
+const btnTexto   = document.getElementById("btn-enviar-texto");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    // Feedback visual de carregamento
+    btnEnviar.disabled = true;
+    btnTexto.textContent = "Enviando...";
+    status.textContent = "";
+    status.className = "form-status";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" },
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Mensagem enviada! Responderei em breve.";
+        status.className = "form-status sucesso";
+        form.reset();
+      } else {
+        throw new Error("Erro no envio");
+      }
+    } catch {
+      status.textContent = "❌ Erro ao enviar. Tente pelo email diretamente.";
+      status.className = "form-status erro";
+    } finally {
+      btnEnviar.disabled = false;
+      btnTexto.textContent = "Enviar mensagem";
+    }
+  });
+}
