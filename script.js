@@ -368,28 +368,49 @@ seletor.addEventListener("change", () => {
   set("proj3-titulo",        t.proj3Titulo);
   set("proj3-desc",          t.proj3Desc);
   set("proj3-link-ver",      t.proj3Ver);
-  set("contato-label",       t.contatoLabel);
-  set("contato-titulo",      t.contatoTitulo);
-  set("contato-desc",        t.contatoDesc);
-  set("contato-email-label", t.contatoEmail);
-  set("contato-li-label",    t.contatoLi);
-  set("contato-gh-label",    t.contatoGh);
-  set("link-sobre",          t.linkSobre);
-  set("link-skills",         t.linkSkills);
-  set("link-projetos",       t.linkProjetos);
-  set("link-contato",        t.linkContato);
-  set("footer-texto",        t.footerTexto);
+
+// =====================
+// MODAIS DOS PROJETOS
+// =====================
+document.querySelectorAll(".btn-modal").forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    const card    = btn.closest(".projeto-card");
+    const modalId = card.getAttribute("data-modal");
+    const modal   = document.getElementById(modalId);
+    if (modal) modal.showModal();
+  });
+});
+
+document.querySelectorAll(".modal-fechar").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.closest(".modal").close();
+  });
+});
+
+// Fecha ao clicar fora do conteúdo
+document.querySelectorAll(".modal").forEach(modal => {
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) modal.close();
+  });
+});
+
+// Fecha com Escape
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") {
+    document.querySelectorAll(".modal[open]").forEach(m => m.close());
+  }
 });
 
 // =====================
 // CARROSSEL DOS MODAIS
 // =====================
 document.querySelectorAll(".carrossel").forEach(carrossel => {
-  const imgs  = carrossel.querySelectorAll(".carrossel-img");
-  const dots  = carrossel.querySelectorAll(".dot");
-  const prev  = carrossel.querySelector(".carrossel-prev");
-  const next  = carrossel.querySelector(".carrossel-next");
-  let atual   = 0;
+  const imgs = carrossel.querySelectorAll(".carrossel-img");
+  const dots = carrossel.querySelectorAll(".dot");
+  const prev = carrossel.querySelector(".carrossel-prev");
+  const next = carrossel.querySelector(".carrossel-next");
+  let atual  = 0;
 
   function ir(n) {
     imgs[atual].classList.remove("ativo");
@@ -406,3 +427,44 @@ document.querySelectorAll(".carrossel").forEach(carrossel => {
   // Reseta ao fechar o modal
   carrossel.closest(".modal").addEventListener("close", () => ir(0));
 });
+
+// =====================
+// FORMULÁRIO DE CONTATO
+// =====================
+const form      = document.getElementById("contato-form");
+const status    = document.getElementById("form-status");
+const btnEnviar = document.getElementById("btn-enviar");
+const btnTexto  = document.getElementById("btn-enviar-texto");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    btnEnviar.disabled = true;
+    btnTexto.textContent = "Enviando...";
+    status.textContent = "";
+    status.className = "form-status";
+
+    try {
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { "Accept": "application/json" },
+      });
+
+      if (response.ok) {
+        status.textContent = "✅ Mensagem enviada! Responderei em breve.";
+        status.className = "form-status sucesso";
+        form.reset();
+      } else {
+        throw new Error("Erro no envio");
+      }
+    } catch {
+      status.textContent = "❌ Erro ao enviar. Tente pelo email diretamente.";
+      status.className = "form-status erro";
+    } finally {
+      btnEnviar.disabled = false;
+      btnTexto.textContent = "Enviar mensagem";
+    }
+  });
+}
