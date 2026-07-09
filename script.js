@@ -368,6 +368,18 @@ seletor.addEventListener("change", () => {
   set("proj3-titulo",        t.proj3Titulo);
   set("proj3-desc",          t.proj3Desc);
   set("proj3-link-ver",      t.proj3Ver);
+  set("contato-label",       t.contatoLabel);
+  set("contato-titulo",      t.contatoTitulo);
+  set("contato-desc",        t.contatoDesc);
+  set("contato-email-label", t.contatoEmail);
+  set("contato-li-label",    t.contatoLi);
+  set("contato-gh-label",    t.contatoGh);
+  set("link-sobre",          t.linkSobre);
+  set("link-skills",         t.linkSkills);
+  set("link-projetos",       t.linkProjetos);
+  set("link-contato",        t.linkContato);
+  set("footer-texto",        t.footerTexto);
+});
 
 // =====================
 // MODAIS DOS PROJETOS
@@ -388,14 +400,12 @@ document.querySelectorAll(".modal-fechar").forEach(btn => {
   });
 });
 
-// Fecha ao clicar fora do conteúdo
 document.querySelectorAll(".modal").forEach(modal => {
   modal.addEventListener("click", (e) => {
     if (e.target === modal) modal.close();
   });
 });
 
-// Fecha com Escape
 document.addEventListener("keydown", (e) => {
   if (e.key === "Escape") {
     document.querySelectorAll(".modal[open]").forEach(m => m.close());
@@ -424,7 +434,6 @@ document.querySelectorAll(".carrossel").forEach(carrossel => {
   next.addEventListener("click", () => ir(atual + 1));
   dots.forEach((dot, i) => dot.addEventListener("click", () => ir(i)));
 
-  // Reseta ao fechar o modal
   carrossel.closest(".modal").addEventListener("close", () => ir(0));
 });
 
