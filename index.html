@@ -240,6 +240,27 @@
           </div>
         </article>
 
+        <article class="projeto-card" data-modal="modal-clima">
+  <div class="projeto-header">
+    <span class="projeto-num" aria-hidden="true">04</span>
+    <div class="projeto-links">
+      <button class="btn-modal" aria-label="Ver detalhes do App de Clima" id="proj4-btn-modal">+ Detalhes</button>
+      <a href="https://thepaulojorge.github.io/appclima/"
+         target="_blank" rel="noopener noreferrer"
+         id="proj4-link-ver"
+         aria-label="Ver App de Clima (abre em nova aba)">↗ Ver app</a>
+    </div>
+  </div>
+  <h3 id="proj4-titulo">App de Clima</h3>
+  <p id="proj4-desc">App de previsão do tempo com busca de cidades, qualidade do ar, nascer e pôr do sol e previsão dos próximos 5 dias. Dados em tempo real via Open-Meteo.</p>
+  <div class="projeto-tags" aria-label="Tecnologias usadas">
+    <span class="tag">HTML</span>
+    <span class="tag">CSS</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">API</span>
+  </div>
+</article>
+
       </div>
     </section>
 
@@ -418,6 +439,40 @@
       </div>
     </div>
   </dialog>
+
+  <!-- Modal 04 — App de Clima -->
+<dialog class="modal" id="modal-clima" aria-labelledby="modal-clima-titulo">
+  <div class="modal-inner">
+    <button class="modal-fechar" aria-label="Fechar modal">✕</button>
+
+    <div class="carrossel">
+      <button class="carrossel-seta carrossel-prev" aria-label="Imagem anterior">&#8592;</button>
+      <div class="carrossel-track">
+        <img src="screenshots/clima1.png" alt="App de Clima - tela 1" class="carrossel-img ativo" loading="lazy">
+        <img src="screenshots/clima2.png" alt="App de Clima - tela 2" class="carrossel-img" loading="lazy">
+      </div>
+      <button class="carrossel-seta carrossel-next" aria-label="Próxima imagem">&#8594;</button>
+      <div class="carrossel-dots">
+        <span class="dot ativo"></span>
+        <span class="dot"></span>
+      </div>
+    </div>
+
+    <div class="modal-corpo">
+      <div class="modal-tags">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">API</span>
+      </div>
+      <h3 id="modal-clima-titulo">App de Clima</h3>
+      <p>App de previsão do tempo com busca de cidades por nome, qualidade do ar, horários de nascer e pôr do sol e previsão detalhada dos próximos 5 dias. Dados em tempo real consumidos via API do Open-Meteo, sem necessidade de chave de acesso.</p>
+      <a href="https://thepaulojorge.github.io/appclima/"
+         target="_blank" rel="noopener noreferrer"
+         class="btn-primary modal-btn">↗ Abrir projeto</a>
+    </div>
+  </div>
+</dialog>
 
   <script src="script.js"></script>
 </body>

@@ -181,6 +181,18 @@ const traducoes = {
     proj3Titulo:   "Rescisão Verificada",
     proj3Desc:     "Calculadora de rescisão trabalhista com IA integrada. Analisa documentos e calcula valores conforme a CLT.",
     proj3Ver:      "↗ Ver app",
+    proj4Titulo:   "App de Clima",
+proj4Desc:     "App de previsão do tempo com busca de cidades, qualidade do ar e previsão dos próximos 5 dias. Dados via Open-Meteo.",
+proj4Ver:      "↗ Ver app",
+proj4Titulo:   "Weather App",
+proj4Desc:     "Weather forecast app with city search, air quality and 5-day forecast. Real-time data via Open-Meteo API.",
+proj4Ver:      "↗ View app",
+proj4Titulo:   "App Météo",
+proj4Desc:     "Application météo avec recherche de villes, qualité de l'air et prévisions sur 5 jours. Données en temps réel via Open-Meteo.",
+proj4Ver:      "↗ Voir l'app",
+proj4Titulo:   "天気アプリ",
+proj4Desc:     "都市検索、空気質、5日間予報機能付き天気アプリ。Open-Meteo APIからリアルタイムデータを取得。",
+proj4Ver:      "↗ アプリを見る",
     contatoLabel:  "// vamos conversar",
     contatoTitulo: "Contato",
     contatoDesc:   "Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!",
@@ -368,6 +380,9 @@ seletor.addEventListener("change", () => {
   set("proj3-titulo",        t.proj3Titulo);
   set("proj3-desc",          t.proj3Desc);
   set("proj3-link-ver",      t.proj3Ver);
+  set("proj4-titulo",   t.proj4Titulo);
+set("proj4-desc",     t.proj4Desc);
+set("proj4-link-ver", t.proj4Ver);
   set("contato-label",       t.contatoLabel);
   set("contato-titulo",      t.contatoTitulo);
   set("contato-desc",        t.contatoDesc);
