@@ -373,7 +373,7 @@ nav {
   inset: 0;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.08;
+  opacity: 0.18;
 }
 
 /* Garante que o conteúdo do hero fica acima das formas */
@@ -1434,4 +1434,79 @@ footer {
 @media (max-width: 480px) {
   .carrossel-track { height: 180px; }
   .carrossel-seta { width: 30px; height: 30px; font-size: 0.85rem; }
+}
+
+/* Formas geométricas em Projetos e Contato */
+#projetos,
+#contato {
+  position: relative;
+  overflow: hidden;
+}
+
+#projetos::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 0.8px solid rgba(10, 132, 255, 0.12);
+  top: -100px;
+  right: -80px;
+  animation: girar 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#projetos::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 0.8px solid rgba(124, 58, 237, 0.1);
+  bottom: 20px;
+  left: -50px;
+  transform: rotate(30deg);
+  animation: girar 18s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#contato::before {
+  content: '';
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 0.8px solid rgba(124, 58, 237, 0.12);
+  bottom: -80px;
+  right: -60px;
+  animation: girar 22s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#contato::after {
+  content: '';
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border: 0.8px solid rgba(10, 132, 255, 0.1);
+  top: 30px;
+  left: -40px;
+  transform: rotate(45deg);
+  animation: girar 30s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Garante que o conteúdo fica acima das formas */
+#projetos .projetos-grid,
+#projetos .section-label,
+#projetos h2,
+#contato .contato-layout,
+#contato .contato-desc,
+#contato .section-label,
+#contato h2 {
+  position: relative;
+  z-index: 1;
 }
