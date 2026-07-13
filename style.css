@@ -212,35 +212,160 @@ nav {
 }
 
 /* Formas geométricas animadas no fundo */
+/* Formas geométricas animadas — hero */
 #hero::before {
   content: '';
   position: absolute;
-  width: 400px;
-  height: 400px;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  border: 0.8px solid rgba(10, 132, 255, 0.15);
-  top: -80px;
-  right: -60px;
-  animation: girar 20s linear infinite;
+  border: 0.8px solid rgba(10, 132, 255, 0.13);
+  top: -120px;
+  right: -100px;
+  animation: girar 22s linear infinite;
   pointer-events: none;
+  z-index: 0;
 }
 
 #hero::after {
   content: '';
   position: absolute;
-  width: 250px;
-  height: 250px;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
-  border: 0.8px solid rgba(124, 58, 237, 0.12);
-  bottom: -60px;
-  left: -40px;
-  animation: girar 28s linear infinite reverse;
+  border: 0.8px solid rgba(124, 58, 237, 0.11);
+  bottom: -80px;
+  left: -80px;
+  animation: girar 30s linear infinite reverse;
   pointer-events: none;
+  z-index: 0;
 }
 
 @keyframes girar {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+/* SVG de formas no hero */
+#hero .hero-geo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.18;
+}
+
+/* Conteúdo do hero acima das formas */
+#hero .hero-inner,
+#hero .hero-foto-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Formas em Projetos */
+#projetos {
+  position: relative;
+  overflow: hidden;
+}
+
+#projetos::before {
+  content: '';
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  border: 0.8px solid rgba(10, 132, 255, 0.11);
+  top: -100px;
+  right: -100px;
+  animation: girar 25s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#projetos::after {
+  content: '';
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 0.8px solid rgba(124, 58, 237, 0.1);
+  bottom: 40px;
+  left: -60px;
+  transform: rotate(30deg);
+  animation: girar 20s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Formas em Contato */
+#contato {
+  position: relative;
+  overflow: hidden;
+}
+
+#contato::before {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  border: 0.8px solid rgba(124, 58, 237, 0.11);
+  bottom: -100px;
+  right: -80px;
+  animation: girar 28s linear infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+#contato::after {
+  content: '';
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border: 0.8px solid rgba(10, 132, 255, 0.1);
+  top: 40px;
+  left: -50px;
+  transform: rotate(45deg);
+  animation: girar 35s linear infinite reverse;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Conteúdo acima das formas em projetos e contato */
+#projetos .projetos-grid,
+#projetos .section-label,
+#projetos h2,
+#contato .contato-layout,
+#contato .contato-desc,
+#contato .section-label,
+#contato h2 {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsividade das formas */
+@media (max-width: 768px) {
+  #hero::before { width: 280px; height: 280px; right: -60px; top: -60px; }
+  #hero::after  { width: 180px; height: 180px; left: -50px; bottom: -50px; }
+  #hero .hero-geo { opacity: 0.12; }
+
+  #projetos::before { width: 220px; height: 220px; right: -60px; }
+  #projetos::after  { width: 120px; height: 120px; left: -40px; }
+
+  #contato::before { width: 200px; height: 200px; right: -50px; }
+  #contato::after  { width: 100px; height: 100px; left: -30px; }
+}
+
+@media (max-width: 480px) {
+  #hero::before { width: 200px; height: 200px; opacity: 0.7; }
+  #hero::after  { width: 130px; height: 130px; opacity: 0.7; }
+  #hero .hero-geo { opacity: 0.08; }
+
+  #projetos::before,
+  #projetos::after,
+  #contato::before,
+  #contato::after { opacity: 0.6; }
 }
 
 .hero-inner {
