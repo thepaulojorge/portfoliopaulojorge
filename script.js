@@ -193,6 +193,9 @@ proj4Ver:      "↗ Voir l'app",
 proj4Titulo:   "天気アプリ",
 proj4Desc:     "都市検索、空気質、5日間予報機能付き天気アプリ。Open-Meteo APIからリアルタイムデータを取得。",
 proj4Ver:      "↗ アプリを見る",
+proj5Titulo:   "Minha Agenda",
+proj5Desc:     "Agenda interativa com calendário, compromissos por categoria, modo escuro e exportação .ics.",
+proj5Ver:      "↗ Ver app",
     contatoLabel:  "// vamos conversar",
     contatoTitulo: "Contato",
     contatoDesc:   "Estou aberto a oportunidades, freelas e networking. Me manda uma mensagem!",
@@ -237,6 +240,9 @@ proj4Ver:      "↗ アプリを見る",
     proj3Titulo:   "Verified Severance",
     proj3Desc:     "Labor severance calculator with integrated AI. Analyzes documents and calculates amounts according to Brazilian labor law.",
     proj3Ver:      "↗ View app",
+    proj5Titulo:   "My Agenda",
+proj5Desc:     "Interactive agenda with calendar, appointments by category, dark mode and .ics export.",
+proj5Ver:      "↗ View app",
     contatoLabel:  "// let's talk",
     contatoTitulo: "Contact",
     contatoDesc:   "I'm open to opportunities, freelance and networking. Send me a message!",
@@ -281,6 +287,9 @@ proj4Ver:      "↗ アプリを見る",
     proj3Titulo:   "Indemnité Vérifiée",
     proj3Desc:     "Calculateur d'indemnité de licenciement avec IA intégrée. Analyse les documents et calcule les montants selon la loi du travail brésilienne.",
     proj3Ver:      "↗ Voir l'app",
+    proj5Titulo:   "Mon Agenda",
+proj5Desc:     "Agenda interactive avec calendrier, rendez-vous par catégorie, mode sombre et export .ics.",
+proj5Ver:      "↗ Voir l'app",
     contatoLabel:  "// parlons-en",
     contatoTitulo: "Contact",
     contatoDesc:   "Je suis ouvert aux opportunités, au freelance et au networking. Envoyez-moi un message !",
@@ -325,6 +334,9 @@ proj4Ver:      "↗ アプリを見る",
     proj3Titulo:   "退職金検証システム",
     proj3Desc:     "AIを統合した労働退職金計算機。書類を分析し、ブラジル労働法に基づいて金額を計算します。",
     proj3Ver:      "↗ アプリを見る",
+    proj5Titulo:   "マイアジェンダ",
+proj5Desc:     "カレンダー、カテゴリ別予定、ダークモード、.icsエクスポート機能付きインタラクティブアジェンダ。",
+proj5Ver:      "↗ アプリを見る",
     contatoLabel:  "// お話しましょう",
     contatoTitulo: "連絡先",
     contatoDesc:   "機会、フリーランス、ネットワーキングについて開かれています。メッセージをどうぞ！",
@@ -383,6 +395,9 @@ seletor.addEventListener("change", () => {
   set("proj4-titulo",   t.proj4Titulo);
 set("proj4-desc",     t.proj4Desc);
 set("proj4-link-ver", t.proj4Ver);
+set("proj5-titulo",   t.proj5Titulo);
+set("proj5-desc",     t.proj5Desc);
+set("proj5-link-ver", t.proj5Ver);
   set("contato-label",       t.contatoLabel);
   set("contato-titulo",      t.contatoTitulo);
   set("contato-desc",        t.contatoDesc);
